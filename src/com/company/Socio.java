@@ -1,11 +1,11 @@
 package com.company;
 
-public class SocioBiblioteca {
+public class Socio {
     private String nombre;
     private String apellido;
     private Integer numeroIdentificacion;
 
-    public SocioBiblioteca(String nombre, String apellido, Integer numeroIdentificacion){
+    public Socio(String nombre, String apellido, Integer numeroIdentificacion){
         this.nombre=nombre;
         this.apellido=apellido;
         this.numeroIdentificacion=numeroIdentificacion;
