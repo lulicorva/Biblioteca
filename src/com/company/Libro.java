@@ -47,4 +47,29 @@ public class Libro {
     public String getAutor() {
         return autor;
     }
+
+    public void agregarNuevoEjemplar(Ejemplar unEjemplar){
+        listaDeEjemplares.add(unEjemplar);
+    }
+
+    public Boolean tieneEjemplaresDisponibles(){
+        return listaDeEjemplares.size() > 0;
+    }
+
+
+    public Ejemplar prestarEjemplar(){
+        if (listaDeEjemplares.size() > 0){
+            listaDeEjemplares.remove(0);
+        }
+        return prestarEjemplar();
+    }
+
+    public void reingresarEjemplar(Ejemplar unEjemplar){
+        listaDeEjemplares.add(unEjemplar);
+    }
+
+                
+
+
+
 }
