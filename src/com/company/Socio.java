@@ -9,12 +9,12 @@ public class Socio {
     private List<Ejemplar> listaDeEjemplaresRetirados;
     private Integer cantidadMaximaDeRetiro;
 
-    public Socio(String nombre, String apellido, Integer numeroIdentificacion, List<Ejemplar> listaDeEjemplaresRetirados, Integer cantidadMaximaDeRetiro){
-        this.nombre=nombre;
-        this.apellido=apellido;
-        this.numeroIdentificacion=numeroIdentificacion;
-        this.listaDeEjemplaresRetirados=listaDeEjemplaresRetirados;
-        this.cantidadMaximaDeRetiro=cantidadMaximaDeRetiro;
+    public Socio(String nombre, String apellido, Integer numeroIdentificacion, List<Ejemplar> listaDeEjemplaresRetirados, Integer cantidadMaximaDeRetiro) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.numeroIdentificacion = numeroIdentificacion;
+        this.listaDeEjemplaresRetirados = listaDeEjemplaresRetirados;
+        this.cantidadMaximaDeRetiro = cantidadMaximaDeRetiro;
     }
 
     public void setListaDeEjemplaresRetirados(List<Ejemplar> listaDeEjemplaresRetirados) {
@@ -55,5 +55,19 @@ public class Socio {
 
     public Integer getNumeroIdentificacion() {
         return numeroIdentificacion;
+    }
+
+    public Boolean tieneCupoDisponible() {
+        return listaDeEjemplaresRetirados.size() < getCantidadMaximaDeRetiro();
+    }
+
+    public void tomarPrestadoUnEjemplar(Ejemplar unEjemplar){
+        if (tieneCupoDisponible()){
+            listaDeEjemplaresRetirados.add(unEjemplar);
+        }
+    }
+
+    public void devolverUnEjemplar(Ejemplar unEjemplar){
+        listaDeEjemplaresRetirados.remove(unEjemplar);
     }
 }

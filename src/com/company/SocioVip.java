@@ -12,6 +12,10 @@ public class SocioVip extends Socio {
         this.valorCuotaMensual=valorCuotaMensual;
     }
 
+    public static Integer getCantidadMaximaDeRetiroVip() {
+        return CANTIDAD_MAXIMA_DE_RETIRO_VIP;
+    }
+
     public Integer getValorCuotaMensual() {
         return valorCuotaMensual;
     }
